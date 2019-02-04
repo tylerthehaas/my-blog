@@ -1,6 +1,6 @@
 import { graphql, Link, StaticQuery } from 'gatsby';
 import * as React from 'react';
-import { css } from 'emotion'
+import { css } from 'emotion';
 
 import config from '../../website-config';
 
@@ -38,7 +38,7 @@ const SiteNavLogo = () => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
-        logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+        logo: file(relativePath: { eq: "img/me-logo.png" }) {
           childImageSharp {
             fixed {
               ...GatsbyImageSharpFixed
@@ -48,13 +48,9 @@ const SiteNavLogo = () => (
       }
     `}
     // tslint:disable-next-line:react-this-binding-issue
-    render={(data: SiteNavLogoProps) => (
+    render={({ logo }: SiteNavLogoProps) => (
       <Link className={`${SiteNavLogoStyles} site-nav-logo`} to="/">
-        {data.logo ? (
-          <img src={data.logo.childImageSharp.fixed.src} alt={config.title} />
-        ) : (
-          config.title
-        )}
+        {logo ? <img src={logo.childImageSharp.fixed.src} alt={config.title} /> : config.title}
       </Link>
     )}
   />

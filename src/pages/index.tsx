@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
-import { css } from 'emotion'
+import { css } from 'emotion';
 import Helmet from 'react-helmet';
 
 import Footer from '../components/Footer';
@@ -102,10 +102,7 @@ const IndexPage: React.FunctionComponent<IndexProps> = props => {
         <meta name="twitter:title" content={config.title} />
         <meta name="twitter:description" content={config.description} />
         <meta name="twitter:url" content={config.siteUrl} />
-        <meta
-          name="twitter:image"
-          content={props.data.header.childImageSharp.fluid.src}
-        />
+        <meta name="twitter:image" content={props.data.header.childImageSharp.fluid.src} />
         <meta name="twitter:site" content={`@${config.twitter.split('https://twitter.com/')[0]}`} />
         <meta property="og:image:width" content={width} />
         <meta property="og:image:height" content={height} />
@@ -120,7 +117,7 @@ const IndexPage: React.FunctionComponent<IndexProps> = props => {
           <div className={`${inner}`}>
             <SiteHeaderContent>
               <SiteTitle>
-                {props.data.logo ? (
+                {/*props.data.logo ? (
                   <img
                     style={{ maxHeight: '45px' }}
                     src={props.data.logo.childImageSharp.fixed.src}
@@ -128,7 +125,8 @@ const IndexPage: React.FunctionComponent<IndexProps> = props => {
                   />
                 ) : (
                   config.title
-                )}
+                )*/}
+                {config.title}
               </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
